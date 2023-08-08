@@ -1,0 +1,35 @@
+﻿@model List<Category>
+
+<div class="container">
+	<div class="row pt-4 pb-3">
+		<div class="col-6">
+			<h2 class="text-primary">Lista kategorija</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Category" asp-action="CreateCategory" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Kreiraj novu</a>
+		</div>
+	</div>
+	<div class="categoryTable">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>
+						Ime kategorije
+					</th>
+					<th>
+						Redoslijed prikaza
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var obj in Model.OrderBy(u => u.DisplayOrder))
+				{
+					<tr>
+						<td>@obj.Name</td>
+						<td>@obj.DisplayOrder</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
