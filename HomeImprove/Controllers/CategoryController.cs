@@ -33,6 +33,7 @@ namespace HomeImprove.Controllers
             {
 				_db.Categories.Add(obj);
 				_db.SaveChanges();
+				TempData["success"] = "Kategorija je kreirana uspješno!";
 				return RedirectToAction("Index");
 			}
             return View();
@@ -64,6 +65,7 @@ namespace HomeImprove.Controllers
 			{
 				_db.Categories.Update(obj);
 				_db.SaveChanges();
+				TempData["success"] = "Kategorija je uređena uspješno!";
 				return RedirectToAction("Index");
 			}
 			return View();
@@ -94,6 +96,7 @@ namespace HomeImprove.Controllers
 			}
 			_db.Categories.Remove(obj);
 			_db.SaveChanges();
+			TempData["success"] = "Kategorija je izbrisana uspješno!";
 			return RedirectToAction("Index");
 		}
 	}
