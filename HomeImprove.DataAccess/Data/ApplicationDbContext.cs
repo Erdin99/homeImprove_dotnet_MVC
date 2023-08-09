@@ -1,7 +1,7 @@
-﻿using HomeImprove.Models;
+﻿using HomeImpr.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HomeImprove.Data
+namespace HomeImpr.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

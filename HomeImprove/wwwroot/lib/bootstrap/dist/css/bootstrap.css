@@ -14523,6 +14523,7 @@ textarea.form-control-lg {
     overflow-y: scroll;
 }
 
+
 /*--footer--*/
 
 ul {
@@ -14639,6 +14640,17 @@ footer .social-icon li i:hover {
         height: 200px;
         overflow-y: scroll;
     }
+    .container {
+        height: 400px;
+        overflow-y: scroll;
+    }
+    .container .btn-group {
+        height: 60px;
+    }
+    .container .btn-group a {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 660px) {
@@ -14646,5 +14658,17 @@ footer .social-icon li i:hover {
         width: 50%;
         height: 200px;
         overflow-y: scroll;
+    }
+    .container {
+        height: 400px;
+        overflow-y: scroll;
+    }
+    .container .btn-group {
+        height: 50px;
+    }
+
+    .container .btn-group a {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

@@ -1,8 +1,9 @@
-﻿using HomeImprove.Data;
-using HomeImprove.Models;
+﻿
+using HomeImpr.DataAccess.Data;
+using HomeImpr.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HomeImprove.Controllers
+namespace HomeImpr.Controllers
 {
     public class CategoryController : Controller
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace HomeImprove.Models
+namespace HomeImpr.Models
 {
     public class Category
     {

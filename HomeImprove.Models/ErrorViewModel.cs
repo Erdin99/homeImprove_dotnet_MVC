@@ -1,4 +1,4 @@
-namespace HomeImprove.Models
+namespace HomeImpr.Models
 {
     public class ErrorViewModel
     {

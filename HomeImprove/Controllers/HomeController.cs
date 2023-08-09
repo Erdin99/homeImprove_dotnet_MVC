@@ -1,8 +1,8 @@
-﻿using HomeImprove.Models;
+﻿using HomeImpr.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace HomeImprove.Controllers
+namespace HomeImpr.Controllers
 {
     public class HomeController : Controller
     {

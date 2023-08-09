@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace HomeImprove.Migrations
+namespace HomeImpr.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration
