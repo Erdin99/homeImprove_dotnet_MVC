@@ -2,10 +2,11 @@
 
 
 <form method="post">
+	<input asp-for="Id" hidden />
 	<div class="scrollable-form">
 		<div class="border p-3 mt-4">
 			<div class="row pb-2">
-				<h2 class="text-primary">Kreiraj kategoriju</h2>
+				<h2 class="text-primary">Uredi kategoriju</h2>
 				<hr />
 			</div>
 			<div class="mb-3 row p-1">
@@ -20,7 +21,7 @@
 			</div>
 			<div class="row">
 				<div class="col-6 col-md-3">
-					<button type="submit" class="btn btn-outline-primary form-control">Kreiraj</button>
+					<button type="submit" class="btn btn-outline-primary form-control">Uredi</button>
 				</div>
 				<div class="col-6 col-md-3">
 					<a asp-controller="Category" asp-action="Index" class="btn btn-primary form-control">Nazad na listu</a>

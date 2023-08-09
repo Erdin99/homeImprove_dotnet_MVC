@@ -33,9 +33,68 @@ namespace HomeImprove.Controllers
             {
 				_db.Categories.Add(obj);
 				_db.SaveChanges();
-				return RedirectToAction("Index", "Category");
+				return RedirectToAction("Index");
 			}
             return View();
         }
-    }
+
+		public IActionResult EditCategory(int? id)
+		{
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? categoryFromDb = _db.Categories.Find(id);
+            if(categoryFromDb == null)
+            {
+                return NotFound();
+            }
+
+			return View(categoryFromDb);
+		}
+
+		[HttpPost]
+		public IActionResult EditCategory(Category obj)
+		{
+			if (obj.Name == obj.DisplayOrder.ToString())
+			{
+				ModelState.AddModelError("name", "Ime kategorije ne može biti isti kao redoslijed kategorije.");
+			}
+			if (ModelState.IsValid)
+			{
+				_db.Categories.Update(obj);
+				_db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+			return View();
+		}
+
+		public IActionResult DeleteCategory(int? id)
+		{
+			if (id == null || id == 0)
+			{
+				return NotFound();
+			}
+			Category? categoryFromDb = _db.Categories.Find(id);
+			if (categoryFromDb == null)
+			{
+				return NotFound();
+			}
+
+			return View(categoryFromDb);
+		}
+
+		[HttpPost, ActionName("DeleteCategory")]
+		public IActionResult DeleteCategoryPOST(int? id)
+		{
+			Category? obj = _db.Categories.Find(id);
+			if(obj == null)
+			{
+				return NotFound();
+			}
+			_db.Categories.Remove(obj);
+			_db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+	}
 }

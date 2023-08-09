@@ -6,7 +6,7 @@
 			<h2 class="text-primary">Lista kategorija</h2>
 		</div>
 		<div class="col-6 text-end">
-			<a asp-controller="Category" asp-action="CreateCategory" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Kreiraj novu</a>
+			<a asp-controller="Category" asp-action="CreateCategory" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Kreiraj novu</a>
 		</div>
 	</div>
 	<div class="categoryTable">
@@ -19,6 +19,7 @@
 					<th>
 						Redoslijed prikaza
 					</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,6 +28,16 @@
 					<tr>
 						<td>@obj.Name</td>
 						<td>@obj.DisplayOrder</td>
+						<td>
+							<div class="w-75 btn-group" role="group">
+								<a asp-controller="Category" asp-action="EditCategory" asp-route-id="@obj.Id" class="btn btn-outline-primary mx-2 mb-2">
+									<i class="bi bi-pencil-square"></i> Uredi
+								</a>
+								<a asp-controller="Category" asp-action="DeleteCategory" asp-route-id="@obj.Id" class="btn btn-outline-danger mx-2 mb-2">
+									<i class="bi bi-trash-fill"></i> Obriši
+								</a>
+							</div>
+						</td>
 					</tr>
 				}
 			</tbody>
