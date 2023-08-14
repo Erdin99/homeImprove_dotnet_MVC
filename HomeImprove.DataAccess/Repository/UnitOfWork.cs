@@ -12,10 +12,12 @@ namespace HomeImpr.DataAccess.Repository
 	{
 		private ApplicationDbContext _db;
 		public ICategoryRepository Category { get; private set; }
+		public IHandymanRepository Handyman { get; private set; }
 		public UnitOfWork(ApplicationDbContext db)
 		{
 			_db = db;
 			Category = new CategoryRepository(_db);
+			Handyman = new HandymanRepository(_db);
 		}
 
 		public void Save()

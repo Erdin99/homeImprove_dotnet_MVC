@@ -4,6 +4,7 @@ using HomeImpr.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeImpr.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230814073121_addHandymansToDb")]
+    partial class addHandymansToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,14 +75,7 @@ namespace HomeImpr.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -96,17 +92,13 @@ namespace HomeImpr.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Handymans");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CategoryId = 1,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Mujo Mujić",
                             Price = 60.0,
                             Title = "Električar"
@@ -114,9 +106,7 @@ namespace HomeImpr.DataAccess.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryId = 3,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Haso Hasić",
                             Price = 150.0,
                             Title = "Stolar"
@@ -124,9 +114,7 @@ namespace HomeImpr.DataAccess.Migrations
                         new
                         {
                             Id = 3,
-                            CategoryId = 1,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Djuro Djurić",
                             Price = 80.0,
                             Title = "Električar"
@@ -134,9 +122,7 @@ namespace HomeImpr.DataAccess.Migrations
                         new
                         {
                             Id = 4,
-                            CategoryId = 2,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Pera Perić",
                             Price = 400.0,
                             Title = "Keramičar"
@@ -144,9 +130,7 @@ namespace HomeImpr.DataAccess.Migrations
                         new
                         {
                             Id = 5,
-                            CategoryId = 2,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Nera Nerić",
                             Price = 450.0,
                             Title = "Keramičar"
@@ -154,24 +138,11 @@ namespace HomeImpr.DataAccess.Migrations
                         new
                         {
                             Id = 6,
-                            CategoryId = 3,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                            ImageUrl = "",
                             Name = "Ramo Ramić",
                             Price = 150.0,
                             Title = "Stolar"
                         });
-                });
-
-            modelBuilder.Entity("HomeImpr.Models.Handyman", b =>
-                {
-                    b.HasOne("HomeImpr.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

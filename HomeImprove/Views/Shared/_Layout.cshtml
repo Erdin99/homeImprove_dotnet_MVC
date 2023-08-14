@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/HomeImprove.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
 </head>
 <body>
     <header>
@@ -35,6 +36,9 @@
                                 <li class="nav-item">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Kategorije</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-item" asp-area="Admin" asp-controller="Handyman" asp-action="Index">Majstori</a>
+                                </li>
                                 <li><hr class="dropdown-divider"></li>
                             </ul>
                         </li>
@@ -51,17 +55,13 @@
         </main>
     </div>
         
-    <footer class="footer bg-dark">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-day-time">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <h1>HomeImprove</h1>
-                        </div>
-                    </div>
-                </div>
+    <footer class="footer bg-dark">   
+        <div class="container-footer">
+            <div class="footer-content">
                 <div class="row">
+                    <div class="col-lg-4">
+                        <h1>HomeImprove</h1>
+                    </div>
                     <div class="col-md-4">
                         <h4>Za sve informacije</h4>
                         <ul class="address1">
@@ -78,15 +78,17 @@
                             <li><a href="#"><i class="bi bi-twitter" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
-        </div>
+        </div>       
     </footer>
   
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="https://cdn.tiny.cloud/1/ufsdnv2283h5xz3bxxuhvjcanovu03iin9d9dx95grgp0ir6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

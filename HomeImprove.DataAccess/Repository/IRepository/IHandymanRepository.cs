@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeImpr.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace HomeImpr.DataAccess.Repository.IRepository
 {
-	public interface IUnitOfWork
+	public interface IHandymanRepository : IRepository<Handyman>
 	{
-		ICategoryRepository Category { get; }
-		IHandymanRepository Handyman { get; }
-
-		void Save();
+		void Update(Handyman obj);
 	}
 }

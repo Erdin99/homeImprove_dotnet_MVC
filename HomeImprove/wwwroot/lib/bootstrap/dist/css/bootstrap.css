@@ -14510,7 +14510,7 @@ textarea.form-control-lg {
 }
 
 .categoryTable {
-    height: 400px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -14524,125 +14524,19 @@ textarea.form-control-lg {
 }
 
 
-/*--footer--*/
-
-ul {
-    padding: 0px;
-}
-
-ol, ul {
-    margin-bottom: 0px;
-}
-
-.social-icon {
-    padding: 0;
-    margin-bottom: 0px;
-    float: right;
-}
-
-.social-icon li {
-    list-style: none;
-    display: inline-block;
-}
-
-.social-icon li i {
-    font-size: 22px;
-    color: #262725;
-    border: solid 2px #ffffff;
-    height: 31px;
-    width: 31px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 27px;
-    margin-right: 15px;
-    transition: 1s;
-    background: #fff;
-}
-
-.social-icon li i:hover {
-    border: solid 2px #262725;
-    color: #ffffff;
-    background: #262725;
-}
-
-
-.footer-day-time {
-    padding-bottom: 10px;
-    border-bottom: 2px solid #7a6f6f;
-    padding-top: 14px;
-    margin-bottom: 25px;
-}
-
-.footer-day-time ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.footer-day-time ul li:last-child {
-    margin-right: 0px;
-}
-
-
-.footer-top h4 {
-    font-size: 15px;
-    text-transform: uppercase;
-}
-
-.footer-top p {
-    font-size: 13px;
-    line-height: 2;
-}
-
-footer p {
-    margin-bottom: 0;
-}
-
-
-.address1 li {
-    list-style: none;
-    position: relative;
-    padding: 0px 0 14px 34px;
-    line-height: 26px;
-}
-
-ul.address1 span {
-    position: absolute;
-    width: 40px;
-    max-width: 40px;
-    left: 0;
-}
-
-.address1 li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-ul.address1 i {
-    width: 20px;
-    position: absolute;
-    left: 0px;
-    text-align: center;
-    font-size: 28px;
-    top: 0;
-}
-footer ul.social-icon {
-    float: left;
-}
-
-footer .social-icon li i:hover {
-    background: #4b8800;
-    border-color: #4b8800;
-}
-
 @media screen and (max-width: 1275px) {
-    footer {
-        width: 50%;
-        height: 200px;
-        overflow-y: scroll;
+    .container-footer {
+        height: 100px;
+    }
+
+    .footer-content {
+        height: 70px;
+        overflow: auto;
     }
     .container {
         height: 400px;
-        overflow-y: scroll;
+        overflow: auto;
+        position: relative;
     }
     .container .btn-group {
         height: 60px;
@@ -14654,14 +14548,17 @@ footer .social-icon li i:hover {
 }
 
 @media screen and (max-width: 660px) {
-    footer {
-        width: 50%;
+    .container-footer {
         height: 200px;
-        overflow-y: scroll;
+    }
+    .footer-content {
+        height: 270px;
+        overflow: auto;
     }
     .container {
         height: 400px;
-        overflow-y: scroll;
+        overflow: auto;
+        position: relative;
     }
     .container .btn-group {
         height: 50px;
