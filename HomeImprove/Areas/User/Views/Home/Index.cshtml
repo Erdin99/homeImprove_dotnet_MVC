@@ -1,8 +1,16 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<Handyman>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="cards-list pb-5">
+	@foreach(var handyman in Model)
+	{
+		<div class="card">
+			<div class="card_image"> <img src="@handyman.ImageUrl" /> </div>
+			<div class="card_title title-white">
+				<h3>@handyman.Title</h3>
+				<p>@handyman.Name</p>
+				<p>@handyman.Price.ToString("c")</p>
+				<a asp-action="Details" asp-route-id="@handyman.Id" class="btn btn-outline-primary bg-gradient border-0 form-control w-75">Detalji</a>
+			</div>
+		</div>
+	}
 </div>

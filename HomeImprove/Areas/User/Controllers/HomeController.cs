@@ -1,4 +1,5 @@
-﻿using HomeImpr.Models;
+﻿using HomeImpr.DataAccess.Repository.IRepository;
+using HomeImpr.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,18 +9,27 @@ namespace HomeImprove.Areas.User.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
             _logger = logger;
+            _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Handyman> handymanList = _unitOfWork.Handyman.GetAll(includeProperties:"Category");
+            return View(handymanList);
         }
 
-        public IActionResult Privacy()
+		public IActionResult Details(int id)
+		{
+			Handyman handyman = _unitOfWork.Handyman.Get(u=>u.Id==id, includeProperties: "Category");
+			return View(handyman);
+		}
+
+		public IActionResult Privacy()
         {
             return View();
         }
