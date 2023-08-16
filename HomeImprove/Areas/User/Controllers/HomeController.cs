@@ -29,7 +29,12 @@ namespace HomeImprove.Areas.User.Controllers
 			return View(handyman);
 		}
 
-		public IActionResult Privacy()
+		public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }

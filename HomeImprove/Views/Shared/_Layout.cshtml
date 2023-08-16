@@ -26,7 +26,10 @@
                             <a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="User" asp-controller="Home" asp-action="AboutUs">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="User" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
                          @if (User.IsInRole(SD.Role_Admin))
                         {
@@ -70,7 +73,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" asp-append-version="true"></script>
-    <script src="https://cdn.tiny.cloud/1/ufsdnv2283h5xz3bxxuhvjcanovu03iin9d9dx95grgp0ir6/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

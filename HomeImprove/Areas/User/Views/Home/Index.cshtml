@@ -9,7 +9,15 @@
 				<h3>@handyman.Title</h3>
 				<p>@handyman.Name</p>
 				<p>@handyman.Price.ToString("c")</p>
-				<a asp-action="Details" asp-route-id="@handyman.Id" class="btn btn-outline-primary bg-gradient border-0 form-control w-75">Details</a>
+				@if(User.Identity.IsAuthenticated)
+				{
+					<a asp-action="Details" asp-route-id="@handyman.Id" class="btn btn-outline-primary bg-gradient border-0 form-control w-75">Details</a>
+				}
+				else
+				{
+
+					<a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-primary bg-gradient border-0 form-control w-75">Details</a>
+				}
 			</div>
 		</div>
 	}
