@@ -13,22 +13,21 @@ namespace HomeImpr.Models
 	{
 		[Key]
 		public int Id { get; set; }
-		[Required(ErrorMessage = "Naslov je neophodno unijeti!")]
-		[Display(Name="Naslov")]
+
+		[Required]
 		public string Title { get; set; }
-		[Display(Name="Opis")]
+
 		public string Description { get; set; }
-		[Required(ErrorMessage = "Ime je neophodno unijeti!")]
-		[Display(Name="Ime")]
+		
+		[Required]
 		public string Name { get; set; }
 
-		[Required(ErrorMessage = "Cijenu je neophodno unijeti!")]
-		[Display(Name ="Cijena")]
-		[Range(1, 5000, ErrorMessage = "Cijena mora biti između 1 i 5000")]
+		[Required]
+		[Range(1, 5000, ErrorMessage = "Price must be between 1 and 5000")]
 		public double Price { get; set; }
 
-		[Display(Name="Id kategorije")]
 		public int CategoryId { get; set; }
+		
 		[ForeignKey("CategoryId")]
 		[ValidateNever]
 		public Category Category { get; set; }

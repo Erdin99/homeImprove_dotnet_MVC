@@ -17,8 +17,8 @@ function loadDataTable() {
                 data: 'id',
                 "render": function(data) {
                     return `<div class="w-75 btn-group" role="group">
-                        <a href="/admin/handyman/upserthandyman?id=${data}" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Uredi</a>
-                        <a onClick=Delete('/admin/handyman/delete/${data}') class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i> Izbriši</a>
+                        <a href="/admin/handyman/upserthandyman?id=${data}" class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Update</a>
+                        <a onClick=Delete('/admin/handyman/delete/${data}') class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
                     </div>`
                 },
                 "width": "35%"
@@ -29,13 +29,13 @@ function loadDataTable() {
 
 function Delete(url) {
     Swal.fire({
-        title: 'Da li ste sigurni?',
-        text: "Nećete biti u mogućnosti da vratite ukoliko izbrišete!",
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Da, izbriši!'
+        confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
         if (result.isConfirmed) {
             $.ajax({

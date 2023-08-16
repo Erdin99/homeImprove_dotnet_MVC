@@ -86,7 +86,7 @@ namespace HomeImprove.Areas.Admin.Controllers
                     _unitOfWork.Handyman.Update(handymanVM.Handyman);
                 }
                 _unitOfWork.Save();
-                TempData["success"] = "Usluga majstora je kreirana uspješno!";
+                TempData["success"] = "Handyman service is created successfully!";
                 return RedirectToAction("Index");
             }
             else
@@ -114,7 +114,7 @@ namespace HomeImprove.Areas.Admin.Controllers
             var handymanToBeDeleted = _unitOfWork.Handyman.Get(u => u.Id == id);
             if(handymanToBeDeleted == null)
             {
-                return Json(new { success = false, message = "Greška prilikom brisanja!" });
+                return Json(new { success = false, message = "Error during deleting!" });
             }
 
 			var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, handymanToBeDeleted.ImageUrl.TrimStart('\\'));
@@ -127,7 +127,7 @@ namespace HomeImprove.Areas.Admin.Controllers
             _unitOfWork.Handyman.Remove(handymanToBeDeleted);
             _unitOfWork.Save();
 
-			return Json(new { success = true, message = "Uspješno brisanje!" });
+			return Json(new { success = true, message = "Handyman service is deleted successfully!" });
 		}
 
 

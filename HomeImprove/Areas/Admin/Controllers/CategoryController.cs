@@ -29,13 +29,13 @@ namespace HomeImprove.Areas.Admin.Controllers
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("name", "Ime kategorije ne može biti isti kao redoslijed kategorije.");
+                ModelState.AddModelError("name", "The category name cannot be same as display order.");
             }
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Kategorija je kreirana uspješno!";
+                TempData["success"] = "Category is created successfully!";
                 return RedirectToAction("Index");
             }
             return View();
@@ -61,13 +61,13 @@ namespace HomeImprove.Areas.Admin.Controllers
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("name", "Ime kategorije ne može biti isti kao redoslijed kategorije.");
+                ModelState.AddModelError("name", "The category name cannot be same as display order.");
             }
             if (ModelState.IsValid)
             {
                 _unitOfWork.Category.Update(obj);
                 _unitOfWork.Save();
-                TempData["success"] = "Kategorija je uređena uspješno!";
+                TempData["success"] = "Category is updated successfully!";
                 return RedirectToAction("Index");
             }
             return View();
@@ -98,7 +98,7 @@ namespace HomeImprove.Areas.Admin.Controllers
             }
             _unitOfWork.Category.Remove(obj);
             _unitOfWork.Save();
-            TempData["success"] = "Kategorija je izbrisana uspješno!";
+            TempData["success"] = "Category is deleted successfully!";
             return RedirectToAction("Index");
         }
     }

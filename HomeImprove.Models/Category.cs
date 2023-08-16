@@ -7,14 +7,12 @@ namespace HomeImpr.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(ErrorMessage ="Ime je neophodno unijeti!")]
-        [MaxLength(30, ErrorMessage ="Maksimalna dužina imena kategorije je 30")]
-        [DisplayName("Ime kategorije")]
+        [Required]
+        [MaxLength(30)]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Neophodno je unijeti ispravan redoslijed kategorije!")]
-        [DisplayName("Redoslijed prikaza")]
-        [Range(1, 100, ErrorMessage="Redoslijed mora biti između 1 i 100")]
+        [DisplayName("Display order")]
+        [Range(1, 100, ErrorMessage= "Display Order must be between 1-100")]
         public int? DisplayOrder { get; set; }
     }
 }
