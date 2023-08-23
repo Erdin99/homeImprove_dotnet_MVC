@@ -590,3 +590,11 @@ bg-success {
     }
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+.handymanTable {
+    height: 540px;
+    overflow: scroll;
+}

@@ -10,7 +10,6 @@ namespace HomeImpr.DataAccess.Repository.IRepository
 	{
 		ICategoryRepository Category { get; }
 		IHandymanRepository Handyman { get; }
-
 		void Save();
 	}
 }

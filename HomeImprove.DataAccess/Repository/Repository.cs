@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HomeImpr.DataAccess.Data;
 using HomeImpr.DataAccess.Repository.IRepository;
+using HomeImpr.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HomeImpr.DataAccess.Repository
@@ -50,6 +51,21 @@ namespace HomeImpr.DataAccess.Repository
 					query = query.Include(includeProp);
 				}
 			}
+			return query.ToList();
+		}
+
+		public IEnumerable<T> GetAllByUsername(Expression<Func<T, bool>> filter, string? includeProperties = null)
+		{
+			IQueryable<T> query = dbSet;
+			query = query.Where(filter);
+			if (!string.IsNullOrEmpty(includeProperties))
+			{
+				foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+				{
+					query = query.Include(includeProp);
+				}
+			}
+
 			return query.ToList();
 		}
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,9 @@ namespace HomeImpr.Models
 		
 		[Required]
 		public string Name { get; set; }
+
+		[Required] 
+		public string Email { get; set; }	
 
 		[Required]
 		[Range(1, 5000, ErrorMessage = "Price must be between 1 and 5000")]

@@ -104,7 +104,7 @@ namespace HomeImprove.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<Handyman> objHandymanList = _unitOfWork.Handyman.GetAll(includeProperties: "Category").ToList();
+			List<Handyman> objHandymanList = _unitOfWork.Handyman.GetAll(includeProperties: "Category").ToList();
 			return Json(new { data = objHandymanList });
         }
 

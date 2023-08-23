@@ -33,6 +33,7 @@ namespace HomeImpr.DataAccess.Data
                     Title= "Electrician",
                     Description= "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                     Name="Mujo Mujić",
+					Email = "mujo.mujic@gmail.com",
                     Price=60,
 					CategoryId=1,
 					ImageUrl=""
@@ -43,6 +44,7 @@ namespace HomeImpr.DataAccess.Data
 					Title = "Carpenter",
 					Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 					Name = "Haso Hasić",
+					Email = "haso.hasic@gmail.com",
 					Price = 150,
 					CategoryId=3,
 					ImageUrl = ""
@@ -53,6 +55,7 @@ namespace HomeImpr.DataAccess.Data
 					Title = "Electrician",
 					Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 					Name = "Djuro Djurić",
+					Email = "djuro.djuric@gmail.com",
 					Price = 80,
 					CategoryId=1,
 					ImageUrl = ""
@@ -63,6 +66,7 @@ namespace HomeImpr.DataAccess.Data
 					Title = "Ceramist",
 					Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 					Name = "Pera Perić",
+					Email = "pera.peric@gmail.com",
 					Price = 400,
 					CategoryId=2,
 					ImageUrl = ""
@@ -73,6 +77,7 @@ namespace HomeImpr.DataAccess.Data
 					Title = "Ceramist",
 					Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 					Name = "Nera Nerić",
+					Email = "nera.neric@gmail.com",
 					Price = 450,
 					CategoryId=2,
 					ImageUrl = ""
@@ -83,6 +88,7 @@ namespace HomeImpr.DataAccess.Data
 					Title = "Carpenter",
 					Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 					Name = "Ramo Ramić",
+					Email = "ramo.ramic@gmail.com",
 					Price = 150,
 					CategoryId=3,
 					ImageUrl = ""
