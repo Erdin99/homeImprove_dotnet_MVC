@@ -1,7 +1,12 @@
-﻿@model IEnumerable<Handyman>
+﻿@model cloudscribe.Pagination.Models.PagedResult<Handyman>
+
+@{
+	ViewData["Controller"] = "Home";
+	ViewData["Action"] = "Index";
+}
 
 <div class="cards-list pb-5">
-	@foreach(var handyman in Model)
+	@foreach (var handyman in Model.Data)
 	{
 		<div class="card">
 			<div class="card_image"> <img src="@handyman.ImageUrl" /> </div>
@@ -9,7 +14,7 @@
 				<h3>@handyman.Title</h3>
 				<p>@handyman.Name</p>
 				<p>@handyman.Price.ToString("c")</p>
-				@if(User.Identity.IsAuthenticated)
+				@if (User.Identity.IsAuthenticated)
 				{
 					<a asp-action="Details" asp-route-id="@handyman.Id" class="btn btn-outline-primary bg-gradient border-0 form-control w-75">Details</a>
 				}
@@ -22,3 +27,12 @@
 		</div>
 	}
 </div>
+
+@section Scripts {
+	@{
+		<partial name="_Pagination" view-data="ViewData" model="Model" />
+	}
+}
+
+
+

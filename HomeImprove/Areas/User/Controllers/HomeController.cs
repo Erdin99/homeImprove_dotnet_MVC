@@ -1,7 +1,12 @@
 ﻿using HomeImpr.DataAccess.Repository.IRepository;
 using HomeImpr.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using cloudscribe.Pagination.Models;
+using HomeImpr.Models.ViewModels;
+using System.Linq;
 
 namespace HomeImprove.Areas.User.Controllers
 {
@@ -16,14 +21,26 @@ namespace HomeImprove.Areas.User.Controllers
             _logger = logger;
             _unitOfWork = unitOfWork;
         }
-
-        public IActionResult Index()
+ 
+        public IActionResult Index(int pageNumber=1, int pageSize=3)
         {
-            IEnumerable<Handyman> handymanList = _unitOfWork.Handyman.GetAll(includeProperties:"Category");
-            return View(handymanList);
+            int ExcludeRecords = (pageSize * pageNumber) - pageSize;
+            IEnumerable<Handyman> handymanList = _unitOfWork.Handyman.GetAll(includeProperties: "Category").Skip(ExcludeRecords).Take(pageSize);
+
+            int count = _unitOfWork.Handyman.GetNumberOfList();
+
+			var result = new PagedResult<Handyman>
+            {
+                Data = handymanList.ToList(),
+                TotalItems = count,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+
+			return View(result);
         }
 
-		public IActionResult Details(int id)
+        public IActionResult Details(int id)
 		{
 			Handyman handyman = _unitOfWork.Handyman.Get(u=>u.Id==id, includeProperties: "Category");
 			return View(handyman);
@@ -44,5 +61,5 @@ namespace HomeImprove.Areas.User.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
+	}
 }

@@ -588,6 +588,10 @@ bg-success {
     .card-list {
         flex-direction: column;
     }
+    .container {
+        height: 550px;
+        overflow: scroll;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -597,4 +601,12 @@ bg-success {
 .handymanTable {
     height: 540px;
     overflow: scroll;
+}
+
+.pagination {
+    padding: 10px;
+    font-weight: bold;
+    width: 50%;
+    margin: auto;
+    box-shadow: 10px 10px #aaaaaa;
 }

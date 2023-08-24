@@ -69,6 +69,11 @@ namespace HomeImpr.DataAccess.Repository
 			return query.ToList();
 		}
 
+		public int GetNumberOfList()
+		{
+			return dbSet.Count();
+		}
+
 		public void Remove(T entity)
 		{
 			dbSet.Remove(entity);
