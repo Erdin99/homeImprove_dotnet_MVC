@@ -38,5 +38,7 @@ namespace HomeImpr.Models
 
 		[ValidateNever]
 		public string ImageUrl { get; set; }
+
+		public string CompanyEmail { get; set; }
 	}
 }

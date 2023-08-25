@@ -1,0 +1,37 @@
+﻿@model List<Handyman>
+
+<div class="container">
+	<div class="row pt-4 pb-3">
+		<div class="col-6">
+			<h2 class="text-primary">My list of posts</h2>
+		</div>
+		<div class="col-6 text-end">
+			<a asp-controller="Company" asp-action="UpsertHandyman" class="btn btn-outline-success"><i class="bi bi-plus-circle"></i> Create new</a>
+		</div>
+	</div>
+	<div class="handymanTable">
+		<table id="tblData2" class="table table-striped">
+			<thead>
+				<tr>
+					<th>
+						Category Name
+					</th>
+					<th>
+						Handyman's Name
+					</th>
+					<th>
+						Price
+					</th>
+					<th>
+						Category
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</div>
+
+@section Scripts {
+	<script src="~/js/handymanCompany.js"></script>
+}

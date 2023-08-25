@@ -1,15 +1,14 @@
 ﻿@model HandymanVM
 
-<form method="post"¨class="row" enctype="multipart/form-data">
+<form method="post" ¨class="row" enctype="multipart/form-data">
 	<input asp-for="Handyman.Id" hidden />
 	<input asp-for="Handyman.ImageUrl" hidden />
-	<input asp-for="Handyman.CompanyEmail" value="/" hidden />
 	<div class="row pb-5">
 		<div class="col-10">
 			<div class="scrollable-form">
 				<div class="border p-3 my-4">
 					<div class="row pb-2">
-						<h2 class="text-primary">@(Model.Handyman.Id != 0 ? "Update" : "Create") Handyman</h2>
+						<h2 class="text-primary">@(Model.Handyman.Id != 0 ? "Update" : "Create") Post</h2>
 						<hr />
 					</div>
 					<div class="form-floating py-2 col-12">
@@ -26,6 +25,14 @@
 						<label asp-for="Handyman.Name" class="ms-2"></label>
 						<span asp-validation-for="Handyman.Name" class="text-danger"></span>
 					</div>
+					@if(User.IsInRole(SD.Role_Company))
+					{
+						<div class="form-floating py-2 col-12">
+							<input asp-for="Handyman.CompanyEmail" class="form-control border-0 shadow" />
+							<label asp-for="Handyman.CompanyEmail" class="ms-2"></label>
+							<span asp-validation-for="Handyman.CompanyEmail" class="text-danger"></span>
+						</div>
+					}
 					<div class="form-floating py-2 col-12">
 						<input asp-for="Handyman.Email" class="form-control border-0 shadow" />
 						<label asp-for="Handyman.Email" class="ms-2"></label>
@@ -58,7 +65,7 @@
 							}
 						</div>
 						<div class="col-6 col-md-3">
-							<a asp-controller="Handyman" asp-action="Index" class="btn btn-primary border form-control">Back to list</a>
+							<a asp-controller="Company" asp-action="Index" class="btn btn-primary border form-control">Back to list</a>
 						</div>
 					</div>
 				</div>

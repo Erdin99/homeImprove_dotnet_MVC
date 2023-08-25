@@ -36,7 +36,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "mujo.mujic@gmail.com",
                     Price=60,
 					CategoryId=1,
-					ImageUrl=""
+					ImageUrl="",
+					CompanyEmail=""
 				},
 				new Handyman
 				{
@@ -47,7 +48,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "haso.hasic@gmail.com",
 					Price = 150,
 					CategoryId=3,
-					ImageUrl = ""
+					ImageUrl = "",
+					CompanyEmail=""
 				},
 				new Handyman
 				{
@@ -58,7 +60,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "djuro.djuric@gmail.com",
 					Price = 80,
 					CategoryId=1,
-					ImageUrl = ""
+					ImageUrl = "",
+					CompanyEmail=""
 				},
 				new Handyman
 				{
@@ -69,7 +72,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "pera.peric@gmail.com",
 					Price = 400,
 					CategoryId=2,
-					ImageUrl = ""
+					ImageUrl = "",
+					CompanyEmail=""
 				},
 				new Handyman
 				{
@@ -80,7 +84,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "nera.neric@gmail.com",
 					Price = 450,
 					CategoryId=2,
-					ImageUrl = ""
+					ImageUrl = "",
+					CompanyEmail=""
 				},
 				new Handyman
 				{
@@ -91,7 +96,8 @@ namespace HomeImpr.DataAccess.Data
 					Email = "ramo.ramic@gmail.com",
 					Price = 150,
 					CategoryId=3,
-					ImageUrl = ""
+					ImageUrl = "",
+					CompanyEmail=""
 				}
 			);
         }

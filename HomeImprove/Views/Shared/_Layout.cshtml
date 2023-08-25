@@ -39,6 +39,13 @@
                             </li>
                         }
 
+                        @if(User.IsInRole(SD.Role_Company))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="Company" asp-controller="Company" asp-action="Index">List of employees</a>
+                            </li>
+                        }
+
                          @if (User.IsInRole(SD.Role_Admin))
                         {
                             <li class="nav-item dropdown">
