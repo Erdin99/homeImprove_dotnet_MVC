@@ -46,6 +46,11 @@ namespace HomeImprove.Areas.User.Controllers
 			return View(handyman);
 		}
 
+        public IActionResult Comments()
+        {
+            return View();
+        }
+
 		public IActionResult AboutUs()
         {
             return View();

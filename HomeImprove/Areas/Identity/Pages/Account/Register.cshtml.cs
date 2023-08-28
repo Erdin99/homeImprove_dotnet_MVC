@@ -21,6 +21,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.CodeAnalysis.Elfie.Extensions;
 using Microsoft.Extensions.Logging;
 
 namespace HomeImprove.Areas.Identity.Pages.Account
@@ -131,7 +132,7 @@ namespace HomeImprove.Areas.Identity.Pages.Account
 
             Input = new()
             {
-                RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem
+                RoleList = _roleManager.Roles.Where(x => x.Name != SD.Role_Admin).Select(x => x.Name).Select(i => new SelectListItem
                 {
                     Text = i,
                     Value = i
